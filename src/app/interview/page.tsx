@@ -1,6 +1,7 @@
 ﻿"use client";
 
 import { useState } from "react";
+import DownloadButtons from "@/components/DownloadButtons";
 
 export default function InterviewPrepPage() {
   const [form, setForm] = useState({ role: "", industry: "", experience: "", focus: "" });
@@ -68,14 +69,7 @@ export default function InterviewPrepPage() {
             <div>
               <pre className="whitespace-pre-wrap text-sm text-gray-300 bg-white/5 rounded-lg p-4 max-h-[500px] overflow-y-auto">{result}</pre>
               <div className="mt-4 flex gap-3">
-                <button onClick={() => navigator.clipboard.writeText(result)} className="btn-secondary text-sm !py-2 !px-4">
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
-                  Copy
-                </button>
-                <button onClick={() => { const blob = new Blob([result], { type: "text/plain" }); const url = URL.createObjectURL(blob); const a = document.createElement("a"); a.href = url; a.download = "interview_prep_" + (form.role || "general") + ".txt"; a.click(); }} className="btn-primary text-sm !py-2 !px-4">
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
-                  Download
-                </button>
+                <DownloadButtons content={result} filename={"interview_prep_" + (form.role || "general")} />
               </div>
             </div>
           ) : (
