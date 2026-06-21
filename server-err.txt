@@ -1,0 +1,211 @@
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html
++                         lang="en"
+-                         lang="zh-CN"
+-                         className="translated-ltr"
+                        >
+                  ...
+ 
+    at E (chrome-extension://egjidjbpglichdcondbcbdnbeeppgdph/inpage.js:166:26666)
+    at w (chrome-extension://egjidjbpglichdcondbcbdnbeeppgdph/inpage.js:166:26850)
+    at Q (chrome-extension://egjidjbpglichdcondbcbdnbeeppgdph/inpage.js:166:27209) (chrome-extension://egjidjbpglichdcondbcbdnbeeppgdph/inpage.js:166:26666)
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/interview" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html
++                         lang="en"
+-                         lang="zh-CN"
+-                         className="translated-ltr"
+                        >
+                  ...
+ 
+    at E (chrome-extension://egjidjbpglichdcondbcbdnbeeppgdph/inpage.js:166:26666)
+    at w (chrome-extension://egjidjbpglichdcondbcbdnbeeppgdph/inpage.js:166:26850)
+    at Q (chrome-extension://egjidjbpglichdcondbcbdnbeeppgdph/inpage.js:166:27209) (chrome-extension://egjidjbpglichdcondbcbdnbeeppgdph/inpage.js:166:26666)
+[browser] Uncaught ReferenceError: interview_prep_ is not defined
+    at onClick (src/app/interview/page.tsx:75:204)
+    at button (<anonymous>)
+    at InterviewPrepPage (src/app/interview/page.tsx:75:17)
+  73 | ...
+  74 | ...
+> 75 | ...teElement("a"); a.href = url; a.download = interview_prep_.txt; a.click(); }} className...
+     |                                               ^
+  76 | ...{2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+  77 | ...
+  78 | ...
+[browser] Uncaught ReferenceError: interview_prep_ is not defined
+    at onClick (src/app/interview/page.tsx:75:204)
+    at button (<anonymous>)
+    at InterviewPrepPage (src/app/interview/page.tsx:75:17)
+  73 | ...
+  74 | ...
+> 75 | ...teElement("a"); a.href = url; a.download = interview_prep_.txt; a.click(); }} className...
+     |                                               ^
+  76 | ...{2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+  77 | ...
+  78 | ...
+[browser] Uncaught ReferenceError: interview_prep_ is not defined
+    at onClick (src/app/interview/page.tsx:75:204)
+    at button (<anonymous>)
+    at InterviewPrepPage (src/app/interview/page.tsx:75:17)
+  73 | ...
+  74 | ...
+> 75 | ...teElement("a"); a.href = url; a.download = interview_prep_.txt; a.click(); }} className...
+     |                                               ^
+  76 | ...{2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+  77 | ...
+  78 | ...
+[browser] Uncaught ReferenceError: interview_prep_ is not defined
+    at onClick (src/app/interview/page.tsx:75:204)
+    at button (<anonymous>)
+    at InterviewPrepPage (src/app/interview/page.tsx:75:17)
+  73 | ...
+  74 | ...
+> 75 | ...teElement("a"); a.href = url; a.download = interview_prep_.txt; a.click(); }} className...
+     |                                               ^
+  76 | ...{2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+  77 | ...
+  78 | ...
+[browser] Uncaught ReferenceError: interview_prep_ is not defined
+    at onClick (src/app/interview/page.tsx:75:204)
+    at button (<anonymous>)
+    at InterviewPrepPage (src/app/interview/page.tsx:75:17)
+  73 | ...
+  74 | ...
+> 75 | ...teElement("a"); a.href = url; a.download = interview_prep_.txt; a.click(); }} className...
+     |                                               ^
+  76 | ...{2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+  77 | ...
+  78 | ...
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/blog" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html
++                         lang="en"
+-                         lang="zh-CN"
+-                         className="translated-ltr"
+                        >
+                  ...
+ 
+    at E (chrome-extension://egjidjbpglichdcondbcbdnbeeppgdph/inpage.js:166:26666)
+    at w (chrome-extension://egjidjbpglichdcondbcbdnbeeppgdph/inpage.js:166:26850)
+    at Q (chrome-extension://egjidjbpglichdcondbcbdnbeeppgdph/inpage.js:166:27209) (chrome-extension://egjidjbpglichdcondbcbdnbeeppgdph/inpage.js:166:26666)
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/interview" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html
++                         lang="en"
+-                         lang="zh-CN"
+-                         className="translated-ltr"
+                        >
+                  ...
+ 
+    at E (chrome-extension://egjidjbpglichdcondbcbdnbeeppgdph/inpage.js:166:26666)
+    at w (chrome-extension://egjidjbpglichdcondbcbdnbeeppgdph/inpage.js:166:26850)
+    at Q (chrome-extension://egjidjbpglichdcondbcbdnbeeppgdph/inpage.js:166:27209) (chrome-extension://egjidjbpglichdcondbcbdnbeeppgdph/inpage.js:166:26666)

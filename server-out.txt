@@ -1,0 +1,15 @@
+▲ Next.js 16.2.9 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.3.7:3000
+- Environments: .env.local
+✓ Ready in 1752ms
+
+○ Compiling / ...
+ GET / 200 in 7.4s (next.js: 6.7s, application-code: 624ms)
+ GET /interview 200 in 1331ms (next.js: 1142ms, application-code: 189ms)
+ POST /api/generate 200 in 27.9s (next.js: 1106ms, application-code: 26.8s)
+ GET /blog 200 in 1952ms (next.js: 1611ms, application-code: 341ms)
+ GET /interview 200 in 284ms (next.js: 22ms, application-code: 262ms)
+✓ Compiled in 324ms
+ GET /interview 200 in 566ms (next.js: 405ms, application-code: 161ms)
+[?25h
